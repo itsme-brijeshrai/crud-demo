@@ -34,5 +34,8 @@ jobs:
           docker build -t brijeshrai/student-crud .
           docker push brijeshrai/student-crud
 
+      - name: Get Public IP
+        run: curl ifconfig.me
+
       - name: Running docker container
         run: docker run -d -p 8080:8080 --name student-crud-app brijeshrai/student-crud
